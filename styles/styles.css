@@ -152,7 +152,7 @@ flex-direction: column;
         width: 280px;
         display: grid;
         grid-template-rows: 60px 2px 65px 1px 65px 1px 65px 1px 80px;
-        grid-template-columns: 240px 40px;
+        grid-template-columns: 230px 50px;
         grid-template-areas: 
         "headerw2 logow2"
         "hr-2 ."
@@ -164,7 +164,7 @@ flex-direction: column;
     }
     .headerw2 {grid-area: headerw2;}
     .logow2 {grid-area: logow2; background: url('images/MBlogo.png') no-repeat right; }
-    .hr-2 {grid-area: hr2;}
+    .hr-2 {grid-area: hr-2;}
     .email2 {grid-area: email2; margin: 20px 0 0 0; }
     .em_ico2 {grid-area: em_ico2; background: url('images/email.png') no-repeat bottom right; margin-bottom: 20px;}
     .pw2 {grid-area: pw2; margin: 20px 0 0 0; }
@@ -286,11 +286,25 @@ footer {
     text-transform: uppercase;
 }
 
-#login{
-	z-index: 22;
+
+
+
+
+.animate {
+	animation-duration: 1s;
+	animation-timing-function: ease;
+	animation-fill-mode: both;
+}
+@keyframes ToLeft {
+	0% {transform: translateX(0);}
+	100% {transform: translateX(-230px);}
 }
 
-#signin{	
-	z-index: 21;
-	opacity: 0;
+
+@keyframes ToRight {
+	0% {transform: translateX(0);}
+	100% {transform: translateX(230px);}
 }
+/* @-webkit-keyframes  */
+
+  

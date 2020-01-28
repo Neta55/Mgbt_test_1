@@ -1,9 +1,12 @@
-"use srict"
+"use strict";
+console.log('Running main.js');
 
-function openLogin() {
-    document.getElementById("myForm").style.display = "block";
+function openLogIn() {
+    document.getElementById("signup").style.display = "none";
+    document.getElementById("login").style.display = "block";
 }
 
-function closeForm() {
-    document.getElementById("myForm").style.display = "none";
+function openSignUp() {
+    document.getElementById("login").style.display = "none";
+    document.getElementById("signup").style.display = "block";
 }
