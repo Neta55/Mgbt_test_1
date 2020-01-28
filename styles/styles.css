@@ -13,6 +13,7 @@ body {
 @font-face {
     font-family: 'Source Sans Pro';
     src: url("fonts/SourceSansPro-Light.ttf"),
+    url("fonts/SourceSansPro-Bold.ttf"),
        url("fonts/SourceSansPro-Regular.ttf");
 }
 
@@ -25,62 +26,186 @@ margin: 12vw auto auto;
 display: grid;
 grid-template-columns: 1fr 1fr;
 grid-template-rows: 100%;
-grid-template-areas: "left right";
+grid-template-areas: "leftg rightg";
 column-gap: 80px;
 
 }
 
 .content1 {
-margin: 75px 50px auto 80px;
-display: grid;
-justify-items: left;
-grid-template-columns: 100%;
-grid-template-rows: auto auto auto auto;
-grid-template-areas: "header1" "line1" "text1" "button1";
-row-gap: 5px;
+
+display: flex;
+align-content: space-around;
+flex-direction: column;
 
 }
 
+.leftg {
+    grid-area: leftg;  
+    margin: 75px auto auto 80px;
+}
+
+.rightg {
+    grid-area: rightg;  
+    margin: 100px auto auto 80px;
+}
+
 .content2 {
-    margin: 75px 50px auto 80px;
-    display: grid;
-    justify-items: left;
-    grid-template-columns: 100%;
-    grid-template-rows: auto auto auto auto;
-    grid-template-areas: "header1" "line1" "text1" "button1";
-    row-gap: 5px;
+    
+    display: flex;
+    align-content: space-around;
+    flex-direction: column;
     
     }
 
-hr {
+    .relative-cont {
+        width: 920px;
+        height: 10px;
+        margin: 0 auto auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100%;
+        grid-template-areas: "leftw rightw";
+        column-gap: 80px;
+    }
+.leftw {
+    grid-area: leftw;
+    top: -440px;
+    left: 20px;
+    display: none;
+
+}
+.rightw {
+    grid-area: rightw;
+    top: -440px;
+    left: -20px;
+    /* display: none; */
+}
+
+.cont-white {
+    width: 460px;
+    height: 460px;
+    background-color: #ffffff;
+    position: relative;
+}
+
+.visible {
+    display: block;
+}
+
+.nonvisible {
+    display: none;
+}
+
+    .triangle-top {
+        width: 0;
+        height: 0;
+        border-bottom: 20px solid #89deff;
+        border-left: 10px solid transparent;
+        position: relative;
+        left: -10px;
+      }
+      .triangle-bottom {
+        width: 0;
+        height: 0;
+        border-top: 20px solid #89deff;
+        border-left: 10px solid transparent;
+        position: relative;
+        left: -10px;
+        top: 420px;
+      }
+
+      
+    .contentw1 {
+        margin: 15px auto auto 90px;
+        width: 280px;
+        display: grid;
+        grid-template-rows: 60px 2px 65px 1px 65px 1px 65px 1px 80px;
+        grid-template-columns: 240px 40px;
+        grid-template-areas: 
+        "headerw1 logow1"
+        "hr-1 ."
+        "user1 us_ico1"
+        "gap11 gap11"
+        "email1 em_ico1"
+        "gap21 gap21"
+        "pw1 pw_ico1"
+        "gap31 gap31"
+        "btn-signup .";  
+    }
+    .headerw1 {grid-area: headerw1;}
+    .logow1 {grid-area: logow1; background: url('images/MBlogo.png') no-repeat right; }
+    .hr-1 {grid-area: hr-1;}
+    .user1 {grid-area: user1; margin: 20px 0 0 0; }
+    .us_ico1 {grid-area: us_ico1; background: url('images/user.png') no-repeat bottom right; margin-bottom: 20px;}
+    .email1 {grid-area: email1; margin: 20px 0 0 0; }
+    .em_ico1 {grid-area: em_ico1; background: url('images/email.png') no-repeat bottom right; margin-bottom: 20px;}
+    .pw1 {grid-area: pw1; margin: 20px 0 0 0; }
+    .pw_ico1 {grid-area: pw_ico1; background: url('images/pw.png') no-repeat bottom right; margin-bottom: 20px;}
+    .gap11 {grid-area: gap11;}
+    .gap21 {grid-area: gap21;}
+    .gap31 {grid-area: gap31;}
+    .btn-signup {grid-area: btn-signup;}
+
+
+    .contentw2 {
+        margin: 15px auto auto 90px;
+        width: 280px;
+        display: grid;
+        grid-template-rows: 60px 2px 65px 1px 65px 1px 65px 1px 80px;
+        grid-template-columns: 240px 40px;
+        grid-template-areas: 
+        "headerw2 logow2"
+        "hr-2 ."
+        "email2 em_ico2"
+        "gap22 gap22"
+        "pw2 pw_ico2"
+        "gap32 gap32"
+        "btn-login forgot";  
+    }
+    .headerw2 {grid-area: headerw2;}
+    .logow2 {grid-area: logow2; background: url('images/MBlogo.png') no-repeat right; }
+    .hr-2 {grid-area: hr2;}
+    .email2 {grid-area: email2; margin: 20px 0 0 0; }
+    .em_ico2 {grid-area: em_ico2; background: url('images/email.png') no-repeat bottom right; margin-bottom: 20px;}
+    .pw2 {grid-area: pw2; margin: 20px 0 0 0; }
+    .pw_ico2 {grid-area: pw_ico2; background: url('images/pw.png') no-repeat bottom right; margin-bottom: 20px;}
+    .gap22 {grid-area: gap22;}
+    .gap32 {grid-area: gap32;}
+    .btn-login {grid-area: btn-login; }
+    .forgot {grid-area: forgot; margin-top: 45px;}
+
+
+
+.hr1 {
     border: 2px solid #49abfe;
     width: 40px;
-    margin: 0;
+    margin: 0px;
+}
+.hr2 {
+    border: 1px solid #cbd2df;
+    width: 100%;
+    margin: 0px;
 }
 
 h3 {
     font-size: 28px;
     font-weight: 100;
-    margin: 0 0 20px 0;
+    margin: 0 0 30px 0;
 }
 
 p {
     font-size: 16px;
     font-weight: 400;
     line-height: 30px;
+    margin: 20px 45px 30px 0;
 }
 
-.white {
-    color: #ffffff;
-}
+.white {color: #ffffff;}
 
-.grey {
-    color: #3e495e;
-}
+.grey {color: #3e495e;}
 
-.red {
-    color: #f44368;
-}
+sup {color: #f44368;}
+sup::before {content: ' ';}
 
 button {
     width: 140px;
@@ -93,35 +218,79 @@ button {
     font-size: 13px;
     font-weight: bold;
     color: #ffffff;
+    cursor: pointer;
 }
 
 .btn-yellow {
+    margin-top: 30px;
     background-color: #f89a35;
     color: #ffffff;
 }
 
+.btn-yellow:hover,
+.btn-yellow:active {
+    background-color: #f8bf35;
+}
+
 .btn-blue {
     background-color: none;
-    border: 2px solid #49abfe;
+    border: 2px solid #49abfe;   
+}
+
+.btn-blue:hover,
+.btn-blue:active {
+    background-color: #49abfe;
     
 }
 
+input {
+    height: 20px;
+    width: 240px;
+    margin-top: -10px;
+    background-color: transparent;
+    border-style: none;
+    border-width: 0;
+    box-shadow: none;
+    outline: 0;
+    font-size: 16px;
+    color: #3e495e;
+
+}
 
 
+.input-label {
+    color: #8495b7;
+    font-size: 16px;
+    font-weight: 400;
+}
+.input-label:active {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
 
-
+.margin65 {
+    margin-top: 65px;
+}
 
 footer {
-    width: 280px;
-    line-height: 14px;
-    position: relative;
-    top: 50px;
+    width: 100%;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: 25px;
     margin: 0 auto;
     color: #a7b3cb;
     font-size: 13px;
-    font-family: 'Source Sans Pro';
     font-weight: bold;
     text-align: center;
-    letter-spacing: 2px;
     text-transform: uppercase;
+}
+
+#login{
+	z-index: 22;
+}
+
+#signin{	
+	z-index: 21;
+	opacity: 0;
 }
