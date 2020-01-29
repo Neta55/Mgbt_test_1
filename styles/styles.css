@@ -78,7 +78,19 @@ flex-direction: column;
     grid-area: rightw;
     top: -440px;
     left: -20px;
-    /* display: none; */
+    display: none;
+}
+
+.leftw-visible {
+    grid-area: leftw;
+    top: -440px;
+    left: 20px;
+
+}
+.rightw-visible {
+    grid-area: rightw;
+    top: -440px;
+    left: -20px;
 }
 
 .cont-white {
@@ -86,6 +98,17 @@ flex-direction: column;
     height: 460px;
     background-color: #ffffff;
     position: relative;
+}
+
+.cont-white::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 420px;
+    background-color: #20293a;
+    z-index: -1;
+    top: 20px;
+    left: -10px;
 }
 
 .visible {
@@ -114,6 +137,14 @@ flex-direction: column;
         top: 420px;
       }
 
+    /* .shadowbox {
+        width: 0;
+        height: 0;
+        border-top: 420px solid #20293a;
+        border-left: 10px solid  #20293a;
+        position: relative;
+        left: -10px;
+    } */
       
     .contentw1 {
         margin: 15px auto auto 90px;
