@@ -17,7 +17,7 @@ console.log('Running main.js');
 function openLogIn() {
     let signup = document.getElementById("signup");
     let login = document.getElementById("login");
-    let pos = 0;
+    let pos = 20;
     let id = setInterval(moveRight, 2);
     function moveRight() {
         if (pos == 440) {
@@ -39,7 +39,7 @@ function openSignUp() {
 
     let login = document.getElementById("login");
     let signup = document.getElementById("signup");
-    let pos = 0;
+    let pos = -20;
     let id = setInterval(moveLeft, 2);
     function moveLeft() {
         if (pos == -440) {
