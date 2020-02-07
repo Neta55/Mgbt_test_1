@@ -9,6 +9,8 @@ body {
     letter-spacing: 1px;
 }
 
+
+
 body.zoom {
     background-size: 120%;
 }
@@ -81,7 +83,7 @@ flex-direction: column;
     grid-area: rightw;
     top: -440px;
     left: -20px;
-    display: none;
+    display: block;
 }
 
 .leftw-visible {

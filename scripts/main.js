@@ -1,6 +1,6 @@
 "use strict";
 console.log('Running main.js');
-document.getElementById("login").style.display = "block";
+// document.getElementById("login").style.display = "block";
 
 
 // function openLogIn() {
@@ -24,6 +24,7 @@ function openLogIn() {
             clearInterval(id);
             signup.style.display = "none";
             login.style.display = "block";
+            location.reload();
             console.log(pos);
         } else {
             pos++;
@@ -35,6 +36,7 @@ function openLogIn() {
 }
 
 function openSignUp() {
+
     let login = document.getElementById("login");
     let signup = document.getElementById("signup");
     let pos = 0;
@@ -52,4 +54,5 @@ function openSignUp() {
         }
     }
 }
+
 
