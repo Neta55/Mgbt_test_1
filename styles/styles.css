@@ -5,14 +5,14 @@ body {
     background-position:  center center;
     background-attachment: fixed;
 
-    font-family: 'Source Sans Pro';
+    font-family: 'Source Sans Pro', sans-serif;
     letter-spacing: 1px;
     animation: sizing 20s ease-in-out infinite;
 }
 
 @keyframes sizing {
     0% {background-size:  100%;}
-    50% {background-size: 110%;}
+    50% {background-size: 105%;}
     100% {background-size: 100%;}
 }
 
@@ -24,12 +24,12 @@ body {
 }
 
 
-@font-face {
+/* @font-face {
     font-family: 'Source Sans Pro';
     src: url("fonts/SourceSansPro-Light.ttf"),
     url("fonts/SourceSansPro-Bold.ttf"),
        url("fonts/SourceSansPro-Regular.ttf");
-}
+} */
 
 .cont-blue {
 

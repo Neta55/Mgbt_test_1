@@ -1,6 +1,6 @@
 "use strict";
 console.log('Running main.js');
-// document.getElementById("login").style.display = "block";
+
 
 
 // function openLogIn() {
