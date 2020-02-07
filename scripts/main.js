@@ -22,8 +22,8 @@ function openLogIn() {
     function moveRight() {
         if (pos == 440) {
             clearInterval(id);
-            signup.style.display = "none";
-            login.style.display = "block";
+            // signup.style.display = "none";
+            // login.style.display = "block";
             location.reload();
             console.log(pos);
         } else {
