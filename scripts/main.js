@@ -42,14 +42,14 @@ function openSignUp() {
     let pos = 0;
     let id = setInterval(moveLeft, 5);
     function moveLeft() {
-        if (pos == 440) {
+        if (pos == -440) {
             clearInterval(id);
             login.style.display = "none";
             signup.style.display = "block";
             console.log(moveLeft);
         } else {
-            pos++;
-            login.style.right = pos + 'px';
+            pos--;
+            login.style.left = pos + 'px';
             console.log(pos);
         }
     }

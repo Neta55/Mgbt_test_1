@@ -1,19 +1,28 @@
 body {
     background-image: url('images/background.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100%;
     background-position:  center center;
     background-attachment: fixed;
 
     font-family: 'Source Sans Pro';
     letter-spacing: 1px;
+    animation: sizing 20s ease-in-out infinite;
 }
 
-
-
-body.zoom {
-    background-size: 120%;
+@keyframes sizing {
+    0% {background-size:  100%;}
+    50% {background-size: 110%;}
+    100% {background-size: 100%;}
 }
+
+@media only screen and (max-width: 1000px) {
+    body {
+        background-size: cover;
+        animation: none;
+    }
+}
+
 
 @font-face {
     font-family: 'Source Sans Pro';
