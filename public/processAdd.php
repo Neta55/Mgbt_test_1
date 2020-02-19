@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $entryDate = date('Y-m-d', $entryDate);
     $user_id = $_SESSION['id'];
 
-    // prepare and bind
+   
     $stmt = $conn->prepare("INSERT INTO diary (diaryEntry, entryDate, user_id) 
     VALUES (:diaryEntry, :entryDate, :user_id)");
     

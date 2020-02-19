@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
     
-    // prepare and bind
+    
     $stmt = $conn->prepare("INSERT INTO users (username, hash, nickname)
         VALUES (:username, :hash, :nickname)");
     $stmt->bindParam(':username', $username);

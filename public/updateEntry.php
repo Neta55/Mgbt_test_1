@@ -3,7 +3,7 @@ require_once '../src/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    //to add to database
+  
     $diary_id = $_POST['update-btn'];
     $diaryEntry = $_POST['diaryEntry'];
     $entryDate = strtotime($_POST['entryDate']);
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bindParam(':entryDate', $entryDate);
 
     $stmt->execute();
-    //we go to our index.php or rather our root
+   
     header('Location: /');
 } else {
     echo "That was not a POST, most likely GET";
