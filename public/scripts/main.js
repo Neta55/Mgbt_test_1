@@ -22,14 +22,10 @@ function openLogIn() {
     function moveRight() {
         if (pos == 440) {
             clearInterval(id);
-            // signup.style.display = "none";
-            // login.style.display = "block";
             location.reload();
-            console.log(pos);
         } else {
             pos++;
             signup.style.left = pos + 'px';
-            console.log(pos);
         }
 
     }
@@ -46,13 +42,12 @@ function openSignUp() {
             clearInterval(id);
             login.style.display = "none";
             signup.style.display = "block";
-            console.log(moveLeft);
         } else {
             pos--;
             login.style.left = pos + 'px';
-            console.log(pos);
         }
     }
 }
+
 
 
