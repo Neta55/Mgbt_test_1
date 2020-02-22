@@ -295,6 +295,7 @@ input {
     outline: 0;
     font-size: 16px;
     color: #3e495e;
+    letter-spacing: 1px;
 
 }
 
@@ -330,18 +331,17 @@ transform: translateX(-50%);
 }
 
 .cont-blue-top {
-position: fixed;
-top: 0;
-left: 50%;
-transform: translateX(-50%);
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #1b2347e0;
     width: 100%;
-    height: auto;
-    margin: 0px auto;
-   display: flex;
+    min-height: 35px;
+    display: flex;
    align-items: center;
    justify-content: center;
-    }
+}
 
 .top-text {
     margin: 0 2px;
@@ -376,21 +376,21 @@ transform: translateX(-50%);
     max-width: 920px;
     min-height: 50px;
     background-color: #ffffffb6;
-    margin: 50px auto;
+    margin: 70px auto 50px auto;
     padding: 10px;
     border-bottom-right-radius: 30px;
     display: grid;
     grid-template-columns: 50px auto 140px;
     grid-template-rows: 25px auto;
     grid-template-areas: 
-    "date-label date-input entry-button"
+    "date-label date-input ."
     "entry-label entry-input entry-button";
     align-content: center;
    
 }
 .date-label {grid-area: date-label;}
 .entry-label {grid-area: entry-label;}
-.entry-button {grid-area: entry-button;  align-self: center;}
+.entry-button {grid-area: entry-button;  align-self: end;}
 
 .date-input {
     grid-area: date-input;
@@ -401,20 +401,23 @@ transform: translateX(-50%);
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
     color: #3e495e;
+    letter-spacing: 1px;
 }
 
 .entry-input {
     grid-area: entry-input;
     background-color: #ffffffb6; 
     width: 98%;
-    min-height: 50px;
+    height: fit-content;
     border-style: none;
     border-width: 0;
     box-shadow: none;
     outline: 0;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     color: #3e495e;
+    letter-spacing: 1px;
+    resize: vertical;
 
 }
 
@@ -422,7 +425,7 @@ transform: translateX(-50%);
     background-color: #ffffffe0;
     max-width: 920px;
     min-height: 50px;
-    margin: 5px auto  50px auto;
+    margin: 5px auto 50px auto;
     padding: 10px;
     border-bottom-right-radius: 30px;
     display: grid;
@@ -431,18 +434,69 @@ transform: translateX(-50%);
     grid-template-areas: 
     "entry-date . . ."
     "entry-text entry-text entry-text entry-text"
-    ". . edit-btn delete-btn";
+    "edit-frm edit-frm edit-btn delete-btn";
     grid-gap: 5px;
     
 }
 
 .entry-date {grid-area: entry-date; }
 .entry-text {grid-area: entry-text; line-height: 20px;}
-.edit-btn {grid-area: edit-btn; color: #49abfe; background-color: #ffffff;}
-.delete-btn {grid-area: delete-btn;}
+.edit-btn {grid-area: edit-btn; color: #49abfe; background-color: #ffffff; border: 2px solid #49abfe;}
+.delete-btn {grid-area: delete-btn; justify-self: end;}
 
 .edit-btn:hover {color: #ffffff;}
 
 .edit-form {
+    grid-area: edit-frm;
+    max-width: 700px;
+    min-height: 200px;
+    background-color: #49abfe; 
+    border-bottom-right-radius: 35px;
+    z-index: 50;
+    position: relative;
+    left: 145px;
+    top: -160px;
+    padding: 10px;
+    display: grid;
+    grid-template-rows: 30px auto 50px;
+    grid-template-areas: 
+    "edit-date"
+    "edit-text"
+    "update-btn";
+    
+    
+
+}
+
+.display-none {
     display: none;
 }
+.edit-date {
+    background-color: #ffffff;
+    width: 100%;
+    font-size: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #3e495e;
+    grid-area: edit-date;
+    margin: 0;
+    border: none;
+    text-indent: 3px;
+    letter-spacing: 1px;
+}
+.edit-text {
+    background-color: #ffffff;
+    width: 99%;
+    height: 90%;
+    border-style: none;
+    border-width: 0;
+    box-shadow: none;
+    outline: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 16px;
+    color: #3e495e;
+    grid-area: edit-text;
+    letter-spacing: 1px;
+    font-size: 18px;
+    resize: vertical;
+}
+.update-btn {grid-area: update-btn; justify-self: end; background-color: #ffffff; color: #49abfe; border: 2px solid #49abfe;}

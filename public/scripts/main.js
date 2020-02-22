@@ -49,5 +49,33 @@ function openSignUp() {
     }
 }
 
+// function openEdit() {
 
+
+
+//     document.getElementById("edit-form").style.display = "grid";
+// }
+
+// function closeEdit() {
+//     document.getElementById("edit-form").style.display = "none";
+// }
+
+function openEdit() {
+
+
+    entries.onclick = function (event) {
+        let curentEditForm = event.target.closest('edit-form'); // where was the click?
+
+        if (!curentEditForm) return; // not on TD? Then we're not interested
+        if (!entries.contains.curentEditForm) return;
+        show(target); // šho it
+    };
+    function show(curentEditForm) {
+        if (curentEditForm) { // remove the existing class
+            curentEditForm.classList.remove('display-none');
+        }
+        curentEditForm = EditForm;
+        curentEditForm.classList.add('edit-form'); // add new
+    }
+}
 

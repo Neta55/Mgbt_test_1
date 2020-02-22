@@ -2,13 +2,15 @@
 //we need to start sesssion to check if user already exists
 
 if (isset($_SESSION['username'])) {
+
     
     echo "<form action='processLogout.php' method='post'>";
     echo "<div class='cont-blue-top'>";
-    echo "<p class='white top-text'>This is diary of " . $_SESSION['username']. ", if this isn't you, press</p>";
+    echo "<p class='white top-text'>This is diary of " . $_SESSION['username'] . ", if this isn't you, press</p>";
     echo "<button class='btn-small'>Exit</button></div>";
     echo "</div>";
     echo "</form>";
+    
 } else {
     echo "<div class='cont-blue'>";
     echo " <div class='content1 leftg'>";

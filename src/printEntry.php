@@ -56,31 +56,34 @@ foreach ($allRows as $row) {
     // }
 
 
-
+    echo "<div id='entries'>";
     echo "<form action='updateEntry.php' method='post' class='int-cont'>";
     echo "<div class='daily-entry'>";
     echo "<h3 class='entry-date no-margin'>" .$row['entryDate']. "</h3>";
     echo "<p class='entry-text no-margin'>" .$row['diaryEntry']. "</p>";
-    echo "<button class='edit-btn btn-blue'>Edit</button>";
-
-    echo "<div class='edit-form' >";
+   
+   
+    echo "<div class='edit-form display-none' id='edit-form' name='edit-form' value='" . $row['id'] . "'>";
     foreach ($row as $key => $value) {
+        
     switch ($key) {
+        
         case 'entryDate':
             echo "<input class='edit-date' name='$key' value='$value'>";
             break;
         case 'diaryEntry': 
             echo "<textarea class='edit-text' name='$key' value='$value'>$value</textarea>";
+           
             break;
 
         }
     }
-    echo "<button name='update-btn' class='update-btn no-margin' value='" . $row['id'] . "'>Update</button>";
+    echo "<button name='update-btn' class='btn-yellow update-btn no-margin' value='" . $row['id'] . "'>Update</button>";
     echo "</div>";
     echo "</form>";
-
+    echo "<button class='edit-btn btn-blue ' onclick='openEdit(this.innerHTML)' value='" . $row['id'] . "'>Edit</button>";
     
-   
+    
     echo "<div class='delete-btn' >";
     echo "<form action='deleteEntry.php' method='post'>";
     echo "<button name='delete-btn' class='btn-yellow no-margin' value='" . $row['id'] . "'>Delete</button>";
@@ -91,4 +94,7 @@ foreach ($allRows as $row) {
 }
 echo "</div>";
 echo "</div>";
+echo "</div>";
+
+
 

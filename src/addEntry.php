@@ -15,7 +15,7 @@ if (!isset($_SESSION['username'])) {
         <input type="date" name="entryDate" id="entryDate" class="date-input" require>
         <label for="diaryEntry" class='entry-label label'>Entry:</label>
         <textarea class="entry-input input" type="text" name="diaryEntry" id="diaryEntry" placeholder="New daily entry" required ></textarea>
-        <button class="btn-yellow" type="submit" name="addEntry">ADD ENTRY</button>
+        <button class="btn-yellow entry-button no-margin" type="submit" name="addEntry">ADD ENTRY</button>
         </div>  
     </form>
 
