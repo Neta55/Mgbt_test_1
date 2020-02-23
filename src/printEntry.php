@@ -78,10 +78,11 @@ foreach ($allRows as $row) {
 
         }
     }
+    echo "<button class='close' onclick='closeEdit() href='#'>&times;</button>";
     echo "<button name='update-btn' class='btn-yellow update-btn no-margin' value='" . $row['id'] . "'>Update</button>";
     echo "</div>";
     echo "</form>";
-    echo "<button class='edit-btn btn-blue ' onclick='openEdit(this.innerHTML)' value='" . $row['id'] . "'>Edit</button>";
+    echo "<button class='edit-btn btn-blue ' type='button' onclick='openEdit()'  value='" . $row['id'] . "'>Edit</button>";
     
     
     echo "<div class='delete-btn' >";

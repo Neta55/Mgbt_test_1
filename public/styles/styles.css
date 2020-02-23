@@ -446,6 +446,9 @@ transform: translateX(-50%);
 
 .edit-btn:hover {color: #ffffff;}
 
+
+
+
 .edit-form {
     grid-area: edit-frm;
     max-width: 700px;
@@ -458,19 +461,40 @@ transform: translateX(-50%);
     top: -160px;
     padding: 10px;
     display: grid;
+    grid-template-columns: auto 30px;
     grid-template-rows: 30px auto 50px;
     grid-template-areas: 
-    "edit-date"
-    "edit-text"
-    "update-btn";
-    
-    
-
-}
-
-.display-none {
+    "edit-date close"
+    "edit-text edit-text"
+    ". update-btn";
+    /* visibility: hidden;
+    opacity: 0; */
     display: none;
 }
+
+.edit-btn:target .edit-form 
+{visibility: visible;
+    opacity: 1;}
+
+/* .display-none {
+    display: none;
+} */
+.close {
+    grid-area: close;
+    margin: 0 0 10px 10px;
+    padding: 0;
+    border: none;
+    width: 30px;
+    background-color: none;
+    color: #ffffff;
+    font-size: 30px;
+    justify-self: center;
+    align-self: center;
+}
+.close:hover {
+    color: #f8bf35;
+}
+
 .edit-date {
     background-color: #ffffff;
     width: 100%;
@@ -480,15 +504,15 @@ transform: translateX(-50%);
     grid-area: edit-date;
     margin: 0;
     border: none;
-    text-indent: 3px;
+    text-indent: 5px;
     letter-spacing: 1px;
 }
 .edit-text {
     background-color: #ffffff;
-    width: 99%;
-    height: 90%;
-    border-style: none;
-    border-width: 0;
+    width: 98%;
+    height: 85%;
+    padding: 5px;
+    border: 2px solid #49abfe;
     box-shadow: none;
     outline: 0;
     font-family: 'Source Sans Pro', sans-serif;
