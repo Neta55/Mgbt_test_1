@@ -51,31 +51,28 @@ function openSignUp() {
 
 function openEdit() {
 
+    const editBtn = document.querySelectorAll('#edit-btn');
+    for (let i = 0; i < editBtn.length; i++) {
+        editBtn[i].onclick = () => { document.getElementById("edit-form-" + event.target.value).style.display = "grid"; };
+    }
 
 
-    document.getElementById("edit-form").style.display = "grid";
+
+
 }
+
+openEdit();
 
 function closeEdit() {
-    document.getElementById("edit-form").style.display = "none";
+
+    const closeBtn = document.querySelectorAll('#close-btn');
+    for (let i = 0; i < closeBtn.length; i++) {
+        closeBtn[i].onclick = () => { document.getElementById("edit-form-" + event.target.value).style.display = "none"; };
+    }
+
+
+
 }
 
-// function openEdit() {
 
-
-//     entries.onclick = function (event) {
-//         let curentEditForm = event.target.closest('edit-form'); // where was the click?
-
-//         if (!curentEditForm) return; // not on TD? Then we're not interested
-//         if (!entries.contains.curentEditForm) return;
-//         show(target); // šho it
-//     };
-//     function show(curentEditForm) {
-//         if (curentEditForm) { // remove the existing class
-//             curentEditForm.classList.remove('display-none');
-//         }
-//         curentEditForm = EditForm;
-//         curentEditForm.classList.add('edit-form'); // add new
-//     }
-// }
-
+closeEdit();

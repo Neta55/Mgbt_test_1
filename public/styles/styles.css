@@ -434,14 +434,14 @@ transform: translateX(-50%);
     grid-template-areas: 
     "entry-date . . ."
     "entry-text entry-text entry-text entry-text"
-    "edit-frm edit-frm edit-btn delete-btn";
+    "edit-frm edit-frm edit-button delete-btn";
     grid-gap: 5px;
     
 }
 
 .entry-date {grid-area: entry-date; }
 .entry-text {grid-area: entry-text; line-height: 20px;}
-.edit-btn {grid-area: edit-btn; color: #49abfe; background-color: #ffffff; border: 2px solid #49abfe;}
+.edit-btn {grid-area: edit-button; color: #49abfe; background-color: #ffffff; border: 2px solid #49abfe;}
 .delete-btn {grid-area: delete-btn; justify-self: end;}
 
 .edit-btn:hover {color: #ffffff;}
@@ -472,13 +472,10 @@ transform: translateX(-50%);
     display: none;
 }
 
-.edit-btn:target .edit-form 
-{visibility: visible;
-    opacity: 1;}
+.display-grid
+{display: grid;}
 
-/* .display-none {
-    display: none;
-} */
+
 .close {
     grid-area: close;
     margin: 0 0 10px 10px;

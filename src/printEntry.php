@@ -63,7 +63,7 @@ foreach ($allRows as $row) {
     echo "<p class='entry-text no-margin'>" .$row['diaryEntry']. "</p>";
    
    
-    echo "<div class='edit-form display-none' id='edit-form' name='edit-form' value='" . $row['id'] . "'>";
+    echo "<div class='edit-form display-none' id='edit-form-" . $row['id'] . "' name='edit-form' value='" . $row['id'] . "'>";
     foreach ($row as $key => $value) {
         
     switch ($key) {
@@ -78,11 +78,11 @@ foreach ($allRows as $row) {
 
         }
     }
-    echo "<button class='close' onclick='closeEdit() href='#'>&times;</button>";
+    echo "<button class='close' id='close-btn' value='" . $row['id'] . "' >&times;</button>";
     echo "<button name='update-btn' class='btn-yellow update-btn no-margin' value='" . $row['id'] . "'>Update</button>";
     echo "</div>";
     echo "</form>";
-    echo "<button class='edit-btn btn-blue ' type='button' onclick='openEdit()'  value='" . $row['id'] . "'>Edit</button>";
+    echo "<button class='edit-btn btn-blue ' type='button' name='edit-btn' id='edit-btn'  value='" . $row['id'] . "'>Edit</button>";
     
     
     echo "<div class='delete-btn' >";
