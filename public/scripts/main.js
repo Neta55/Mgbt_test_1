@@ -67,7 +67,7 @@ function closeEdit() {
 
     const closeBtn = document.querySelectorAll('#close-btn');
     for (let i = 0; i < closeBtn.length; i++) {
-        closeBtn[i].onclick = () => { document.getElementById("edit-form-" + event.target.value).style.display = "none"; };
+        closeBtn[i].onclick = () => { event.target.parentNode.style.display = "none"; };
     }
 
 

@@ -17,7 +17,7 @@ function getConn($SERVER, $DB, $user, $pw, $port = 3306)
 function checkLogin($conn, $username, $password)
 {
     // prepare and bind
-    $stmt = $conn->prepare("SELECT id, hash FROM users
+    $stmt = $conn->prepare("SELECT id, hash, nickname FROM users
         WHERE (username = :username)");
     $stmt->bindParam(':username', $username);
     $stmt->execute();
@@ -32,6 +32,8 @@ function checkLogin($conn, $username, $password)
             
             $_SESSION['username'] = $username;
             $_SESSION['id'] = (int) $allRows[0]['id'];
+            $_SESSION['nickname'] = $allRows[0]['nickname'];
+
             header('Location: /');
             exit();
         } else {

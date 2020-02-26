@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $diaryEntry = $_POST['diaryEntry'];
     $entryDate = strtotime($_POST['entryDate']);
     $entryDate = date('Y-m-d', $entryDate);
-    $user_id = $_SESSION['id'];
+    $user_id = (int) $_SESSION['id'];
 
    
     $stmt = $conn->prepare("INSERT INTO diary (diaryEntry, entryDate, user_id) 

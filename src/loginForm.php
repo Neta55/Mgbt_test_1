@@ -3,10 +3,10 @@
 
 if (isset($_SESSION['username'])) {
 
-    
+
     echo "<form action='processLogout.php' method='post'>";
     echo "<div class='cont-blue-top'>";
-    echo "<p class='white top-text'>This is diary of " . $_SESSION['username'] . ", if this isn't you, press</p>";
+    echo "<p class='white top-text'>This is diary of " . $_SESSION['nickname'] . ", if this isn't you, press</p>";
     echo "<button class='btn-small'>Exit</button></div>";
     echo "</div>";
     echo "</form>";
@@ -99,23 +99,18 @@ if (isset($_SESSION['username'])) {
 
     if (isset($_GET['error'])) {
         switch ($_GET['error']) {
-            case 'shortpassword':
-                echo "<h3><strong>REĢISTRĒTIES NEIZDEVĀS!</strong> <br>Parole ir pārāk īsa, jāizmanto vismaz 5 burti vai simboli.<br>Ej atpakaļ uz reģistrācijas lapu un saskaiti zīmes!</h3>";
-                break;
             case 'userexists':
-                echo "<h3><strong>REĢISTRĒTIES NEIZDEVĀS!</strong> <br>Lietotājs ar tādu vārdu jau eksistē.<br>Ej atpakaļ uz reģistrācijas lapu un izdomā citu!</h3>";
+                echo "<div class='warnings grey'><h3 class='warnings-text'><strong>Failed!</strong> User with this email already exists!</h3> <button class='warnings-close' type='button' id='close-btn'  >&times;</button></div>";
                 break;
-            case 'mismatch':
-                echo "<h3><strong>REĢISTRĒTIES NEIZDEVĀS!</strong> <br>Paroles nesakrīt. <br>Ej atpakaļ uz reģistrācijas lapu un esi uzmanīgāks!</h3>";
-                break; 
+ 
             case 'badlogin':
-                echo "<h3><strong>IELOGOTIES NEIZDEVĀS!</strong> <br>Nepareizs lietotājvārds un/vai parole. <br>Mēģini vēlreiz un esi uzmanīgāks!</h3>";
+                echo "<div class='warnings grey'><h3 class='warnings-text'><strong>Failed!</strong> Incorrect password!</h3> <button class='warnings-close' type='button' id='close-btn'  >&times;</button></div>";
                 break; 
             case 'nouser':
-                echo "<h3><strong>IELOGOTIES NEIZDEVĀS!</strong> <br>Lietotājs ar tādu vārdu neeksistē. <br>Ievadi pareizu lietotājvārdu vai ej uz reģistrācijas lapu un piereģistrējies!</h3>";
+                echo "<div class='warnings grey'><h3 class='warnings-text'><strong>Failed!</strong> Incorrect e-mail or user doesn't exist!</h3> <button class='warnings-close' type='button' id='close-btn'  >&times;</button></div>";
                 break;               
             default:
-                echo "<h3>Tevi piereģistrēt neizdevās, jo: " . $_GET['error'] . "</h3>";
+                echo "<div class='warnings grey'><h3 class='warnings-text'><strong>Failed! Error: " . $_GET['error'] . "!</h3> <button class='warnings-close' type='button' id='close-btn'  >&times;</button></div>";
                 break;
             
         }
